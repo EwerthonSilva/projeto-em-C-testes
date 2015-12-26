@@ -1,0 +1,61 @@
+# Project: Projeto5
+# Makefile created by Dev-C++ 5.8.1
+
+CPP      = g++.exe
+CC       = gcc.exe
+WINDRES  = windres.exe
+OBJ      = main.o Cadastro.o Menu.o Data_Hora.o Consulta.o Globais_Prototipos.o Alteracao.o Exclusao_Logica.o Busca.o Ordenacao.o Exclusao_Fisica.o Restaurar.o
+LINKOBJ  = main.o Cadastro.o Menu.o Data_Hora.o Consulta.o Globais_Prototipos.o Alteracao.o Exclusao_Logica.o Busca.o Ordenacao.o Exclusao_Fisica.o Restaurar.o
+LIBS     = -L"D:/Program Files (x86)/Dev-Cpp/MinGW64/lib" -L"D:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc -g3
+INCS     = -I"D:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"D:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"D:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.8.1/include"
+CXXINCS  = -I"D:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"D:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"D:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.8.1/include" -I"D:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.8.1/include/c++"
+BIN      = Projeto5.exe
+CXXFLAGS = $(CXXINCS) -g3
+CFLAGS   = $(INCS) -g3
+RM       = rm.exe -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CC) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+main.o: main.c
+	$(CC) -c main.c -o main.o $(CFLAGS)
+
+Cadastro.o: Cadastro.c
+	$(CC) -c Cadastro.c -o Cadastro.o $(CFLAGS)
+
+Menu.o: Menu.c
+	$(CC) -c Menu.c -o Menu.o $(CFLAGS)
+
+Data_Hora.o: Data_Hora.c
+	$(CC) -c Data_Hora.c -o Data_Hora.o $(CFLAGS)
+
+Consulta.o: Consulta.c
+	$(CC) -c Consulta.c -o Consulta.o $(CFLAGS)
+
+Globais_Prototipos.o: Globais_Prototipos.c
+	$(CC) -c Globais_Prototipos.c -o Globais_Prototipos.o $(CFLAGS)
+
+Alteracao.o: Alteracao.c
+	$(CC) -c Alteracao.c -o Alteracao.o $(CFLAGS)
+
+Exclusao_Logica.o: Exclusao_Logica.c
+	$(CC) -c Exclusao_Logica.c -o Exclusao_Logica.o $(CFLAGS)
+
+Busca.o: Busca.c
+	$(CC) -c Busca.c -o Busca.o $(CFLAGS)
+
+Ordenacao.o: Ordenacao.c
+	$(CC) -c Ordenacao.c -o Ordenacao.o $(CFLAGS)
+
+Exclusao_Fisica.o: Exclusao_Fisica.c
+	$(CC) -c Exclusao_Fisica.c -o Exclusao_Fisica.o $(CFLAGS)
+
+Restaurar.o: Restaurar.c
+	$(CC) -c Restaurar.c -o Restaurar.o $(CFLAGS)
